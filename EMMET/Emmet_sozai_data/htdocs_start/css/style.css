@@ -1,0 +1,245 @@
+@charset "utf-8";
+
+body{
+	font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+background: #eee;
+color: #333;
+}
+
+header{
+	width: 100%;
+	height: 100px;
+	border-top: 50px solid #000;
+	background: #fff;
+}
+
+#headerWrap{
+	width: 960px;
+	margin: 0 auto;
+
+}
+
+h1{
+	width: 280px;
+	height: 70px;
+	float: left;
+	margin-top: 15px;
+	
+}
+
+#gNav{
+	width: 600px;
+	height: 26px;
+	float: left;
+	margin: 37px 0 0 60px;
+}
+
+#gNav li {
+	width: 100px;
+	height: 26px;
+	float: left;
+	margin-right: 20px;
+}
+
+#gNav li a {
+	display: block;
+	width: 100px;
+	height: 26px;
+	background:transparent;
+	color: #444;
+	font-weight: bold;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 80%;
+	line-height: 26px;
+	text-decoration: none;
+	-webkit-transition: linear 0.3s;
+	
+	
+}
+
+#gNav li a:hover {
+	background: #ddd;
+
+}
+
+#gNav li a.current {
+	background: #ddd;
+	cursor: default;
+
+}
+
+#billboard{
+	width: 100%;
+	height: 450px;
+	background: #999;
+
+}
+
+#mainImg{
+	width: 960px;
+	height: 450px;
+	margin: 0 auto;
+
+}
+
+#contents {
+	width: 960px;
+	margin: 0 auto;
+	background: #fff;
+
+}
+
+h2 {
+	font-family: 'Rock Salt', cursive;
+	font-size: 250%;
+	text-align: center;
+	padding: 40px 0;
+
+}
+
+#message p {
+	text-align: center;
+	font-size: 90%;
+	line-height: 2;
+
+}
+
+#recomend {
+	width: 790px;
+	margin: 40px auto 0;
+}
+
+.recommendBox {
+	width: 250px;
+	text-align: center;
+	font-size: 80%;
+	float: left;
+
+}
+
+.recommendBox p {
+	margin: 20px 0;
+}
+
+#cafeImg {
+	margin-top: 40px;
+
+}
+
+#galleryDate {
+	width: 880px;
+	margin: 0 auto;
+	padding-bottom: 40px;
+
+}
+
+#galleryImg {
+	float: left;
+	margin-right: 40px;
+}
+
+#galleryData p {
+	font-size: 90%;
+	line-height: 2;
+	padding-right: 40px;
+
+}
+
+#sBtn {
+	text-align: right;
+	margin-top: 40px;
+}
+
+#sBtn a {
+	display: inline-block;
+	background: #6666cc;
+	border-radius: 5px;
+	border: 1px solid #449;
+	text-align: center;
+	padding: 3px 20px;
+	font-size: 80%;
+	color: #fff;
+	text-decoration: none;
+	-webkit-transition: linear 0.2s;
+	-o-transition: linear 0.2s;
+	transition: linear  0.2s;
+
+}
+
+#sBtn a:hover{
+	background: #88c;
+
+}
+
+footer {
+	background: #000;
+	color: #fff;
+
+}
+
+#sitemap {
+	width: 600px;
+	margin: 0 auto 30px;
+	padding-top: 20px;
+}
+
+#sitemap li dl dt {
+	font-weight: bold;
+	font-size: 90%;
+	line-height: 2;
+}
+
+#list01, #list02, #list03 {
+	width: 129px;
+	border-left: 1px solid #fff;
+	padding: 0 10px;
+	float: left;
+}
+
+#list04 {
+	width: 128px;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	padding: 0 10px;
+	float: left;
+}
+
+.sublist {
+	list-style: disc;
+	padding-left: 20px;
+}
+
+.sublist li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 90%;
+	line-height: 2;
+
+}
+.sublist li a:hover {
+	color: #999;
+}
+
+h4 {
+	text-align: center;
+	font-size: 150%;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+footer p {
+	text-align: center;
+
+}
+
+#add {
+	font-size: 90%;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+#copyright {
+	font-size: 80%;
+	padding-bottom: 40px;
+}
