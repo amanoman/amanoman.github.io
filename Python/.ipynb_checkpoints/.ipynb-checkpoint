@@ -125,6 +125,44 @@
   },
   {
    "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "elem_login_btn = browser.find_element_by_id('login-btn')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<selenium.webdriver.remote.webelement.WebElement (session=\"ef18ff05c0196ccef56e120d5cea8637\", element=\"33f17398-9b8d-4c0d-a553-b88893beccea\")>"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "elem_login_btn"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "elem_login_btn.click()"
+   ]
+  },
+  {
+   "cell_type": "code",
    "execution_count": null,
    "metadata": {},
    "outputs": [],
