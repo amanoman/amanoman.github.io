@@ -1,0 +1,17 @@
+#ライブラリのインポート  
+import numpy as np
+import matplotlib.pyplot as plt
+
+# xデータ
+x = np.array([25,27,29])
+
+# yデータ
+y = np.array([5,21,25])
+
+#グラフ描画
+plt.scatter(x,y,s=100,c='blue',label= '実データ')
+plt.legend(loc='upper left')
+plt.title('アイスクリームと気温の関係')
+plt.xlabel('最高気温(x)')
+plt.ylabel('売れた個数(y)')
+plt.show()

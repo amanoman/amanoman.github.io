@@ -1,0 +1,33 @@
+#実データ
+x = np.array([25,27,29])
+y = np.array([5,21,25])
+
+#直線
+y_orange = 5*x -115
+y_green = 3*x -63
+
+#グラフ描画
+plt.scatter(x,y,s=100,c='blue',label= '実データ')
+plt.legend(loc='upper left')
+plt.title('アイスクリームと気温の関係')
+plt.xlabel('最高気温(x)')
+plt.ylabel('売れた個数(y)')
+plt.plot(x,y_orange,lw=5, c= 'orange')
+plt.plot(x,y_green,lw=5,c='green')
+plt.show()
+
+###################################################
+
+#実データ（y）と直線（y_orange）の誤差
+y_orange_e = y - y_orange
+
+#実データ（y）と直線（y_green）の誤差
+y_green_e = y - y_green
+
+###################################################
+
+#オレンジ戦の二乗誤差
+print (np.sum((y_orange_e ** 2)))
+
+#グリーン戦の二乗誤差
+print (np.sum((y_green_e ** 2)))
