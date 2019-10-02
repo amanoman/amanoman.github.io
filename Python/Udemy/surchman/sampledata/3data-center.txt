@@ -1,0 +1,9 @@
+#データ中心化後のグラフ描画
+plt.scatter(x_c,y_c,s=100,c='blue',label= '中心化後の実データ')
+plt.legend(loc='upper left')
+plt.title('アイスクリームと気温の関係(データ中心化後)')
+plt.xlabel('最高気温(x_c)')
+plt.ylabel('売れた個数(y_c)')
+plt.axhline(0, ls=':', lw=3, c='gray') 
+plt.axvline(0, ls=':', lw=3, c='gray')
+plt.show()

@@ -1,0 +1,50 @@
+#xデータ
+x = np.array([25,25,27,27])
+
+#yデータ
+y = np.array([6,8,8,10])
+
+#赤直線
+y_red = x - 18
+
+#グラフ描画
+plt.scatter(x,y,s=100,c='blue',label= '実データ')
+plt.legend(loc='upper left')
+plt.title('アイスクリームと気温の関係')
+plt.xlabel('最高気温(x)')
+plt.ylabel('売れた個数(y)')
+plt.plot(x,y_red,lw=5, c= 'red')
+plt.show()
+
+###############################################
+
+#オレンジ
+y_orange = 2*x - 44
+
+#グラフ描画
+plt.scatter(x,y,s=100,c='blue',label= '実データ')
+plt.legend(loc='upper left')
+plt.title('アイスクリームと気温の関係')
+plt.xlabel('最高気温(x)')
+plt.ylabel('売れた個数(y)')
+plt.plot(x,y_red,lw=5, c= 'red')
+plt.plot(x,y_orange,lw=5, c= 'orange')
+plt.show()
+
+###############################################
+
+#赤線と実データの誤差
+y_red_e = y - y_red
+print (y_red_e)
+print('赤線の誤差和：', np.sum(y_red_e))
+
+###############################################
+
+#オレンジ線と実データの誤差
+y_orange_e = y - y_orange
+print (y_orange_e)
+print('オレンジの誤差和：', np.sum(y_orange_e))
+
+###############################################
+
+
