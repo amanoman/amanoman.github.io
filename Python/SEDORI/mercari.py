@@ -1,16 +1,11 @@
 #%%
-pip install selenium
+import requests
+from bs4 import BeautifulSoup
 
-# %%
-import sys
-import time
-from selenium import webdriver
+load_url = "https://www.mercari.com/jp/"
+html = requests.get(load_url)
+soup = BeautifulSoup(html.content, "html.parser")
 
-# %%
-args = sys.argv
-query = args[1]
+print(soup)
 
-browser = webdriver.Chrome(executable_path="chromedriver.exe")
-browser.implicitly_wait = 10
-
-# %%
+＃メルカリはスクレイピング禁止のためrequetsではサーバで弾かれて403エラー
