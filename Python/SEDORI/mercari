@@ -1,0 +1,23 @@
+#%%
+pip install chromedriver selenium
+
+# %%
+import sys
+import time
+from selenium import webdriver
+
+# %%
+# 引数から取得 実行例：python merscraping.py
+args = sys.argv
+query = args[1]
+
+# 別途ダウンロードしたchromedriver.exeの場所を指定
+browser = webdriver.Chrome(executable_path="chromedriver.exe")
+browser.implicitly_wait = 10
+
+url_site = "https://www.mercari.com/jp/search/?keyword={}&status_on_sale=1".format(query)
+browser.get(url_site)
+
+
+
+# %%
