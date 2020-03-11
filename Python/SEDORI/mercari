@@ -1,6 +1,7 @@
 # %%
 import sys
 import time
+import datetime
 import pandas as pd
 from selenium import webdriver
 
@@ -10,28 +11,30 @@ from selenium import webdriver
 #query = args[1]
 
 # 別途ダウンロードしたchromedriver.exeの場所を指定
-
+names = []
 browser = webdriver.Chrome(executable_path="chromedriver.exe")
-elems = browser.find_elements_by_class_name("items-box-name")
-browser.implicitly_wait = 10
 
 
-for page in range(1,3):
-    names = []
+
+
+for page in range(1,2):
+    
     url_site = "https://www.mercari.com/jp/search/?page={}&keyword=%E6%A7%98%E5%B0%82%E7%94%A8&sort_order=&category_root=&brand_name=&brand_id=&size_group=&price_min=&price_max=&status_trading_sold_out=1&_s=U2FsdGVkX18Oa2DC5-tQ94NbMrxahpRboRWKtkLCS6ryhNnqlnA_Y-e-x0wxwGWR4Ea-VbsSDSBWKakxahDJtK4PVrncBd7rkt1HWBCR7CE".format(page)
     browser.get(url_site)
     print("{}ページ目取得中".format(page))
+    elems = browser.find_elements_by_class_name("items-box-name")
     time.sleep(10)
 
     for elem in elems: #for文でelemsリストの中身をelemの中に一つずついれる
         name_full = elem.text #テキストで表示できるようにする
         name = name_full.split("専用")[0] #splitで専用で分割、1つ目を取得
         names.append(name) #namesリストへひとつずつ追加
-    
+        browser.implicitly_wait = 10
+
 browser.close();
+
 print("※※取得完了※※")
 
-names
 #csvファイルに出力
 #空のDataFrameを定義
 df = pd.DataFrame()
@@ -39,14 +42,19 @@ df['アカウント名']=names
 
 print(df.duplicated().value_counts())
 
-df.to_csv('様専用.csv',index=False)
+df.to_csv("様専用"+str(datetime.date.today())+'.csv',index=False)
 print("※※CSVファイルに保存しました※※")
 
 
+
+
 # %%
-names
+print("様専用"+str(datetime.date.today())+'.csv')
+
+# %%
 
 
-
+# %%
+print(datetime.date.today())
 
 # %%
