@@ -10,13 +10,14 @@ from selenium import webdriver
 #query = args[1]
 
 # 別途ダウンロードしたchromedriver.exeの場所を指定
-names = []
+
 browser = webdriver.Chrome(executable_path="chromedriver.exe")
 elems = browser.find_elements_by_class_name("items-box-name")
 browser.implicitly_wait = 10
 
 
-for page in range(1,11):
+for page in range(1,3):
+    names = []
     url_site = "https://www.mercari.com/jp/search/?page={}&keyword=%E6%A7%98%E5%B0%82%E7%94%A8&sort_order=&category_root=&brand_name=&brand_id=&size_group=&price_min=&price_max=&status_trading_sold_out=1&_s=U2FsdGVkX18Oa2DC5-tQ94NbMrxahpRboRWKtkLCS6ryhNnqlnA_Y-e-x0wxwGWR4Ea-VbsSDSBWKakxahDJtK4PVrncBd7rkt1HWBCR7CE".format(page)
     browser.get(url_site)
     print("{}ページ目取得中".format(page))
@@ -30,6 +31,7 @@ for page in range(1,11):
 browser.close();
 print("※※取得完了※※")
 
+names
 #csvファイルに出力
 #空のDataFrameを定義
 df = pd.DataFrame()
@@ -45,3 +47,6 @@ print("※※CSVファイルに保存しました※※")
 names
 
 
+
+
+# %%
