@@ -40,21 +40,34 @@ print("※※取得完了※※")
 df = pd.DataFrame()
 df['アカウント名']=names
 
+
 print(df.duplicated().value_counts())
 
 df.to_csv("様専用"+str(datetime.date.today())+'.csv',index=False)
 print("※※CSVファイルに保存しました※※")
 
+print("※※重複を抽出中※※")
+dup = [x for x in set(names) if names.count(x) > 1]
+print(dup)
 
-
+df_dup = pd.DataFrame()
+df_dup['重複アカウント']=dup
+df_dup.to_csv("※様専用抽出済み"+str(datetime.date.today())+'.csv',index=False)
+print("※※CSVファイルに保存しました※※")
 
 # %%
 print("様専用"+str(datetime.date.today())+'.csv')
 
 # %%
+print([x for x in set(names) if names.count(x) > 1])
+
+# %%
+names
+
+# %%
 
 
 # %%
-print(datetime.date.today())
+names
 
 # %%
