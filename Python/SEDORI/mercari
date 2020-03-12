@@ -17,7 +17,7 @@ browser = webdriver.Chrome(executable_path="chromedriver.exe")
 
 
 
-for page in range(1,2):
+for page in range(1,11):
     
     url_site = "https://www.mercari.com/jp/search/?page={}&keyword=%E6%A7%98%E5%B0%82%E7%94%A8&sort_order=&category_root=&brand_name=&brand_id=&size_group=&price_min=&price_max=&status_trading_sold_out=1&_s=U2FsdGVkX18Oa2DC5-tQ94NbMrxahpRboRWKtkLCS6ryhNnqlnA_Y-e-x0wxwGWR4Ea-VbsSDSBWKakxahDJtK4PVrncBd7rkt1HWBCR7CE".format(page)
     browser.get(url_site)
