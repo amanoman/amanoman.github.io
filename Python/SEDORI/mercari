@@ -10,16 +10,16 @@ from selenium import webdriver
 #args = sys.argv
 #query = args[1]
 
-# 別途ダウンロードしたchromedriver.exeの場所を指定
+# エラーの場合→現在のChromeに対応したドライバをダウンロードして、アナコンダ内のC:\Users\hks-s\Anaconda3\chromedriver_win32を上書きすること
 names = []
 browser = webdriver.Chrome(executable_path="chromedriver.exe")
 
 
 
 
-for page in range(1,11):
+for page in range(1,2):
     
-    url_site = "https://www.mercari.com/jp/search/?page={}&keyword=%E6%A7%98%E5%B0%82%E7%94%A8&sort_order=&category_root=&brand_name=&brand_id=&size_group=&price_min=&price_max=&status_trading_sold_out=1&_s=U2FsdGVkX18Oa2DC5-tQ94NbMrxahpRboRWKtkLCS6ryhNnqlnA_Y-e-x0wxwGWR4Ea-VbsSDSBWKakxahDJtK4PVrncBd7rkt1HWBCR7CE".format(page)
+    url_site = "https://www.mercari.com/jp/search/?page={}&keyword=%E6%A7%98%E5%B0%82%E7%94%A8&sort_order=&category_root=7&category_child=&brand_name=&brand_id=&size_group=&price_min=3000&price_max=&status_trading_sold_out=1&_s=U2FsdGVkX1_2eDeith8mMdYWSAJ6SzmalpQ21R-USJeaPXXv0CR8nr-bEdwsBG69bA_OYNbWH5G-rs8uTjJsL5uuy6g0TmZ6UnBc0AzT-Gs".format(page)
     browser.get(url_site)
     print("{}ページ目取得中".format(page))
     elems = browser.find_elements_by_class_name("items-box-name")
@@ -65,6 +65,10 @@ print([x for x in set(names) if names.count(x) > 1])
 names
 
 # %%
+df_dup = pd.DataFrame()
+df_dup['重複アカウント']=dup
+df_dup.to_csv("※様専用抽出済み"+str(datetime.date.today())+'.csv',index=False, encoding="utf_8_sig")
+print("※※CSVファイルに保存しました※※")
 
 
 # %%
