@@ -12,18 +12,19 @@ def pasteUrl(e): #テキストボックスがクリックされたときにURL�
 
 def getData(): #データを取得してExcelブックに追加する
   url = urlText.get("1.0","end") #1文字目から最後まで取得
-  html_contents 0 requests.get(url).text
-  html_soup = BeautifulSoup(html_contents,"html>parser")
-  prices = thml_soup.find_all("span",{"class":"a-color-price"}) #価格の取得
+  html_contents = requests.get(url).text
+  html_soup = BeautifulSoup(html_contents,"html.parser")
+  prices = html_soup.find_all("span",{"class":"a-color-price"}) #価格の取得
   price = None
   for p in prices:
     if "¥" in p.text: #通過記号がある情報をPriceとして取得k
       price = p.text
       break
-item_name = html_soup.find("",{"id":productTitle}).text #商品名の取得
-item_name = item_name.replace("_n","") #開業を削除する
+  item_name = html_soup.find("",{"id":productTitle}).text #商品名の取得
+  item_name = item_name.replace("_n","") #開業を削除する
+  
 #新しいエクセルブックに書き出し
-df 0 pd.read_excel("Amazon商品リスト.xlsx")
+df = pd.read_excel("Amazon商品リスト.xlsx")
 data = [datetime.datetime.now(),item_name,price,url]
 df2 = pd.DataFrame([data],columns=df.columns)
 df = df.append(df2)
