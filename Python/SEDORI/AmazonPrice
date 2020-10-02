@@ -1,0 +1,21 @@
+import requests
+import datetime
+import pandas as pd
+import pyperclip
+from bs4 import BeautifulSoup
+import tkinter as tk
+from tkinter import messagebox
+
+#GUIの用意
+root = tk.Tk()
+root.title("商品データ書き出し")　#タイトルの設定
+root.geometry("700x55") #サイズの設定
+root.grid()
+urlLabel = tk.Label(root,text="URL")
+urlText = tk.Text(root,borderwidth = 3,height =3,relief="ridge")
+urlText.bind("<Button-1>",pasteUrl)
+getButton = tk.Button(root,text="データ取得",command=getData)　#データ取得ボタン
+urlLabel.grid(row=1,column=1)
+urlText.grid(row=1,column=2)
+getButton.grid(row=1,column=3)
+root.mainloop() #ウィンドウを表示
