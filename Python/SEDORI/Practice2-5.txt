@@ -1,0 +1,7 @@
+x = input("数字を入力")
+y = input("Yの値を入力")
+
+a = int(x)
+b = int(y)
+
+print("{}+{}={}".format(a,b,a+b))
