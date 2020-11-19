@@ -1,0 +1,7 @@
+#E = a**2 -10a +28 ‚ÌƒOƒ‰ƒt 
+a = np.arange(0,10,0.1)
+E = a**2 -10*a + 28
+plt.plot(a,E)
+plt.xlabel('a')
+plt.ylabel('E')
+plt.show()
