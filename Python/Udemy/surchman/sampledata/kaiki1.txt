@@ -1,0 +1,20 @@
+#データの定義
+x = df['x']
+y = df['y']
+
+#データのグラフ描画
+plt.scatter(x,y,s=100,c='blue',label= '実データ')
+plt.legend(loc='upper left')
+plt.title('アイスクリームと気温の関係')
+plt.xlabel('最高気温(x)')
+plt.ylabel('売れた個数(y)')
+
+# 回帰直線（a:傾き、b:切片）
+a, b = np.polyfit(x, y, 1)
+fh = a * x + b
+print('a=', a, 'b=',b)
+
+# 回帰直線のグラフ描画
+plt.plot(x,fh,lw=3, c= 'red')
+
+plt.show()

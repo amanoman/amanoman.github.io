@@ -1,0 +1,21 @@
+#データの準備
+x = np.array([5,10,20,25])
+y = np.array([1,2,6,9])
+
+#データのグラフ描画
+plt.scatter(x,y,s=100,c='blue',label= '実データ')
+plt.legend(loc='upper left')
+plt.title('スピードと停止距離の関係')
+plt.xlabel('スピード(km/h)')
+plt.ylabel('停止距離(m)')
+
+# 近似式
+a, b, c = np.polyfit(x, y, 2)
+print('a=', a, 'b=',b, 'c=',c )
+
+# 近似式のグラフ描画
+x = np.arange(1, 26, 0.1)
+y =a * x**2 + b*x + c
+plt.plot(x, y,c= 'red')
+
+plt.show()
