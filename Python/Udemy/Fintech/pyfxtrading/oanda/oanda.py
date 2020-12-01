@@ -10,7 +10,7 @@ class APIClient(object):
     def __init__(self, access_token, account_id, enviroment='practice'):
         self.access_token = access_token
         self.account_id = account_id
-        self.client = API(access_token=access_token, environment=enviroment)
+        self.client = API(access_token=access_token, enviroment=enviroment)
 
     def get_balance(self):
         req = accounts.AccountSummary(accountID=self.account_id)
