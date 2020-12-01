@@ -7,10 +7,10 @@ from oandapyV20.exceptions import V20Error
 logger = logging.getLogger(__name__)
 
 class APIClient(object):
-    def __init__(self, access_token, account_id, enviroment='practice'):
+    def __init__(self, access_token, account_id, environment="practice"):
         self.access_token = access_token
         self.account_id = account_id
-        self.client = API(access_token=access_token, enviroment=enviroment)
+        self.client = API(access_token=access_token, environment=environment)
 
     def get_balance(self):
         req = accounts.AccountSummary(accountID=self.account_id)
