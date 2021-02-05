@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 import time
 
-    #CryptowatchのAPIで１分足を取得
+#CryptowatchのAPIで１分足を取得
 response = requests.get("https://api.cryptowat.ch/markets/bitflyer/btcfxjpy/ohlc?periods=60")
 response = response.json()
 
