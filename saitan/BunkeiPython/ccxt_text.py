@@ -1,9 +1,12 @@
 import ccxt
 from pprint import pprint
+from PASSWORDS.password import *
+
 
 bitflyer = ccxt.bitflyer()
-bitflyer.apiKey = '' #apiKeyのKのみ大文字注意
-bitflyer.secret = ''
+bitflyer.apiKey = bitFlyer_apiKey  # apiKeyのKのみ大文字注意
+bitflyer.secret = bitFlyer_secret
+
 
 order = bitflyer.create_order(
     symbol = 'BTC/JPY',

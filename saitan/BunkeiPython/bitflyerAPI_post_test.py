@@ -3,9 +3,10 @@ import hmac
 import requests
 import datetime
 import json
+from PASSWORDS.password import * #PASSWORDS/password.pyを*全部readしている。PASSWORDSフォルダはgitignore済み。
 
-api_key = ""
-api_secret = ""
+api_key = bitFlyer_apiKey
+api_secret = bitFlyer_secret
 
 base_url = "https://api.bitflyer.jp"
 path_url = "/v1/me/sendchildorder"
