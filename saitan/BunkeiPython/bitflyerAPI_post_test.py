@@ -4,8 +4,8 @@ import requests
 import datetime
 import json
 
-api_key = "QaQKsPrCRd2PQUnSkMeSeg"
-api_secret = "TtDihu2tSEfvf5o9SJ12k/CIliylx7+vTmaqS2Ec7rI="
+api_key = ""
+api_secret = ""
 
 base_url = "https://api.bitflyer.jp"
 path_url = "/v1/me/sendchildorder"

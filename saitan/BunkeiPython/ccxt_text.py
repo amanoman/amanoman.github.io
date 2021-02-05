@@ -2,14 +2,15 @@ import ccxt
 from pprint import pprint
 
 bitflyer = ccxt.bitflyer()
-ticker = bitflyer.fetch_ticker('BTC/JPY', params = {"product_code" : "FX_BTC_JPY"})
-pprint(ticker)
+bitflyer.apiKey = '' #apiKeyのKのみ大文字注意
+bitflyer.secret = ''
 
+order = bitflyer.create_order(
+    symbol = 'BTC/JPY',
+    type='limit',
+    side='buy',
+    price='3100000',
+    amount='0.01',
+    params = {"product_code" : "FX_BTC_JPY"})
 
-pprint("-" *100)
-
-bitflyer.apikey = 'QaQKsPrCRd2PQUnSkMeSeg'
-bitflyer.secret = 'TtDihu2tSEfvf5o9SJ12k/CIliylx7+vTmaqS2Ec7rI='
-
-collateral = bitflyer.private_get_getcollateral()
-pprint(collateral)
+pprint(order)
