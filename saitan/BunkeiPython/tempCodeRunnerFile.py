@@ -1,1 +1,1 @@
-bitFlyer_apiKey
+終値

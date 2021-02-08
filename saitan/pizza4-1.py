@@ -4,3 +4,4 @@ for pizza in pizzas:
 print("昔からピザが大好き！")
 print("嫌いなピザはありません！")
 print("私はピザが大好きです！")
+
