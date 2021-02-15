@@ -5,6 +5,7 @@ from pprint import pprint
 import time
 import numpy as np
 import ccxt
+from PASSWORDS.password imoprt *
 
 #-------------設定項目------------------------
 
@@ -22,22 +23,22 @@ judge_price={
 volatility_term = 5          # 平均ボラティリティの計算に使う期間
 stop_range = 2               # 何レンジ幅にストップを入れるか
 trade_risk = 0.03            # 1トレードあたり口座の何％まで損失を許容するか
-levarage = 3                 # レバレッジ倍率の設定
+levarage = 1                 # レバレッジ倍率の設定
 
 entry_times = 2              # 何回に分けて追加ポジションを取るか
-entry_range = 1              # 何レンジごとに追加ポジションを取るか
+entry_range = 0.5              # 何レンジごとに追加ポジションを取るか
 
 trailing_config = "ON"       # ONで有効 OFFで無効
 stop_AF = 0.02               # 加速係数
 stop_AF_add = 0.02           # 加速係数を増やす度合
 stop_AF_max = 0.2            # 加速係数の上限
 
-filter_VER = "OFF"           # フィルター設定／OFFで無効
+filter_VER = "A"           # フィルター設定／OFFで無効
 MA_term = 200                # トレンドフィルターに使う移動平均線の期間
 
 bitflyer = ccxt.bitflyer()
-bitflyer.apiKey = ''         # APIキーを設定
-bitflyer.secret = ''         # APIシークレットを設定
+bitflyer.apiKey = 'bitFlyer.apiKey'         # APIキーを設定
+bitflyer.secret = 'bitFlyer.secret'         # APIシークレットを設定
 bitflyer.timeout = 30000     # 通信のタイムアウト時間の設定
 
 line_config = "OFF"          # LINE通知をするかどうかの設定
