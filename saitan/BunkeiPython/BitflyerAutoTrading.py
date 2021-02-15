@@ -5,7 +5,7 @@ from pprint import pprint
 import time
 import numpy as np
 import ccxt
-from PASSWORDS.password imoprt *
+from PASSWORDS.password import *
 
 #-------------設定項目------------------------
 
