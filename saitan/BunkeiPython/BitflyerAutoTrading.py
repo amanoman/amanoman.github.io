@@ -37,14 +37,14 @@ filter_VER = "A"           # フィルター設定／OFFで無効
 MA_term = 200                # トレンドフィルターに使う移動平均線の期間
 
 bitflyer = ccxt.bitflyer()
-bitflyer.apiKey = 'bitFlyer.apiKey'         # APIキーを設定
-bitflyer.secret = 'bitFlyer.secret'         # APIシークレットを設定
+bitflyer.apiKey = bitFlyer.apiKey         # APIキーを設定
+bitflyer.secret = bitFlyer.secret         # APIシークレットを設定
 bitflyer.timeout = 30000     # 通信のタイムアウト時間の設定
 
 line_config = "ON"          # LINE通知をするかどうかの設定
 log_config = "OFF"           # ログファイルを出力するかの設定
 log_file_path = ""           # ログを記録するファイル名と出力パス
-line_token = "LINE_token"    # LINE通知を使用する場合はAPIキーを入力
+line_token = LINE_token    # LINE通知を使用する場合はAPIキーを入力
 
 #-------------ログ機能の設定--------------------
 
