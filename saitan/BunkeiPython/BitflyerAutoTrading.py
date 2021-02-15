@@ -41,10 +41,10 @@ bitflyer.apiKey = 'bitFlyer.apiKey'         # APIキーを設定
 bitflyer.secret = 'bitFlyer.secret'         # APIシークレットを設定
 bitflyer.timeout = 30000     # 通信のタイムアウト時間の設定
 
-line_config = "OFF"          # LINE通知をするかどうかの設定
+line_config = "ON"          # LINE通知をするかどうかの設定
 log_config = "OFF"           # ログファイルを出力するかの設定
 log_file_path = ""           # ログを記録するファイル名と出力パス
-line_token = ""              # LINE通知を使用する場合はAPIキーを入力
+line_token = "LINE_token"    # LINE通知を使用する場合はAPIキーを入力
 
 #-------------ログ機能の設定--------------------
 
@@ -656,7 +656,7 @@ def bitflyer_market(side,lot):
 	while True:
 		try:
 			order = bitflyer.create_order(
-				symbol = 'BTC/JPY',
+				symbol = 'FX_BTC/JPY',
 				type='market',
 				side= side,
 				amount= lot,
