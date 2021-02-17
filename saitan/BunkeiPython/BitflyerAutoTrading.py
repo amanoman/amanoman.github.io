@@ -656,7 +656,7 @@ def bitflyer_market(side,lot):
 	while True:
 		try:
 			order = bitflyer.create_order(
-				symbol = 'FX_BTC/JPY',
+				symbol = 'FX_BTC_JPY',
 				type='market',
 				side= side,
 				amount= lot,
