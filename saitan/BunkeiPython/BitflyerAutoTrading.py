@@ -13,7 +13,7 @@ wait = 30                    # ループの待機時間（30秒推奨）
 buy_term = 30                # 最高値（上値）ブレイクアウト期間
 sell_term = 30               # 最安値（下値）ブレイクアウト期間
 chart_sec = 3600             # 使用する時間軸（秒換算）
-chart_API = "cryptowatch"    # 価格の取得元を（cryptowatch/cryptocompare）から選択
+chart_API = "cryptocompare"    # 価格の取得元を（cryptowatch/cryptocompare）から選択
 
 judge_price={
   "BUY" : "close_price",     # ブレイク判断　高値（high_price)か終値（close_price）を使用
