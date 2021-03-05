@@ -11,7 +11,7 @@ from threading import Thread
 import signal
 import os
 from PASSWORDS.password import *
-from rich import print
+
 # -------------------------------------
 key = bitFlyer_apiKey
 secret = bitFlyer_secret
@@ -38,7 +38,7 @@ class bFwebsocket(object):
        self._JSONRPC_ID_AUTH = 1
 
    def startWebsocket(self):
-       def on_open(ws):
+       def on_open(self):
            print("Websocket connected")
 
            if len(self._private_channels) > 0:
@@ -47,12 +47,12 @@ class bFwebsocket(object):
            if len(self._public_channels) > 0:
                params = [{'method': 'subscribe', 'params': {'channel': c}}
                          for c in self._public_channels]
-               ws.send(json.dumps(params))
+               self.ws.send(json.dumps(params))
 
-       def on_error(ws, error):
+       def on_error(self, error):
            print(error)
 
-       def on_close(ws):
+       def on_close(self):
            print("Websocket closed")
 
        def run(ws):
@@ -60,7 +60,7 @@ class bFwebsocket(object):
                ws.run_forever()
                time.sleep(3)
 
-       def on_message(ws, message):
+       def on_message(self, message):
            messages = json.loads(message)
 
            # auth レスポンスの処理
@@ -70,7 +70,7 @@ class bFwebsocket(object):
                elif 'result' in messages and messages['result'] == True:
                    params = [{'method': 'subscribe', 'params': {'channel': c}}
                              for c in self._private_channels]
-                   ws.send(json.dumps(params))
+                   self.ws.send(json.dumps(params))
 
            if 'method' not in messages or messages['method'] != 'channelMessage':
                return
@@ -86,13 +86,13 @@ class bFwebsocket(object):
            else:
                print(channel, len(recept_data))
 
-       def auth(ws):
+       def auth(self):
            now = int(time.time())
            nonce = token_hex(16)
            sign = hmac.new(self._secret.encode(
                'utf-8'), ''.join([str(now), nonce]).encode('utf-8'), sha256).hexdigest()
            params = {'method': 'auth', 'params': {'api_key': self._key, 'timestamp': now,'nonce': nonce, 'signature': sign}, 'id': self._JSONRPC_ID_AUTH}
-           ws.send(json.dumps(params))
+           self.ws.send(json.dumps(params))
 
        ws = websocket.WebSocketApp(self._end_point, on_open=on_open,on_message=on_message, on_error=on_error, on_close=on_close)
        websocketThread = Thread(target=run, args=(ws, ))
@@ -112,5 +112,4 @@ if __name__ == '__main__':
 
 
 test_api = bFwebsocket()
-test_api.startWebsocket()
-    
+test_api.startWebsocket()#.on_close()

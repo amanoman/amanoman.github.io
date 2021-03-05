@@ -84,7 +84,7 @@ class App:
        self.out_file_date = today
        self.logger.info('Writing to: {}'.format(out_file_path))
 
-   def on_open(self, ws):
+   def on_open(self):
        self.logger.info('open')
        msg = {
            'method': 'subscribe',
@@ -92,7 +92,7 @@ class App:
                'channel': self.channel
            }
        }
-       ws.send(json.dumps(msg))
+       self.ws.send(json.dumps(msg))
 
    def on_message(self, ws, message):
        body = json.loads(message)['params']['message']
