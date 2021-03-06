@@ -1,0 +1,11 @@
+INFO:__mp_main__.lightning_board_snapshot_BTC_JPY:open
+INFO:__mp_main__.lightning_board_snapshot_BTC_JPY:Writing to: ~/btc\lightning_board_snapshot_BTC_JPY\stream\2021-03-05.txt
+ERROR:__mp_main__.lightning_board_snapshot_BTC_JPY:
+Traceback (most recent call last):
+  File "C:\Users\hks-s\Anaconda3\lib\site-packages\websocket\_app.py", line 349, in run_forever
+    dispatcher.read(self.sock.sock, read, check)
+  File "C:\Users\hks-s\Anaconda3\lib\site-packages\websocket\_app.py", line 69, in read
+    r = self.select()
+  File "C:\Users\hks-s\Anaconda3\lib\site-packages\websocket\_app.py", line 80, in select
+    r, w, e = select.select((sock, ), (), (), self.ping_timeout)
+KeyboardInterrupt
