@@ -1,18 +1,22 @@
-sandwich_orders = ['トマトサンド','チキンサンド','たまごサンド','チーズサンド','ツナサンド','カルビサンド','`ポークサンド']
+sandwich_orders = ['トマトサンド','チキンサンド','パストラミサンド','たまごサンド','チーズサンド','パストラミサンド','ツナサンド','パストラミサンド','カルビサンド','ポークサンド']
 finished_sandwiches = []
-polling_active = True
 
-message = "\n メニューからサンドウィッチを注文してください："
-print(sandwich_orders)
-order = input(message)
-while poling_active:
-    while order in sandwich_orders:
-    sandwich_orders.remove(order)
-    print(f"ご注文は{order}ですね！")
-    finished_sandwiches.append(order)
-    print(f"おまたせしました{order}です！")
-repeat = input("他に注文はございますか？(yes/no)")
-if repeat == no:
-    polling_active = False
+print('パストラミサンドは品切れです')
+remove_sandwich = 'パストラミサンド'
+while remove_sandwich in sandwich_orders:
+    sandwich_orders.remove(remove_sandwich)
+while sandwich_orders:
     
+    current_order = sandwich_orders.pop()
+    print(f"{current_order}ができました")
+    finished_sandwiches.append(current_order)
+
+print(f"できあがったサンドイッチ一覧です")
+for finished_sandwich in finished_sandwiches:
+    print(finished_sandwich)
+
+finished_sandwiches.append(remove_sandwich)
+print(finished_sandwiches)
+if remove_sandwich in finished_sandwiches:
+    print('パストラミサンドが残っています')
 
