@@ -7,8 +7,8 @@ from pprint import pprint
 
 chart_sec = 60      # ローソク足の時間軸
 file = "./FX_BTC_JPY.json"    # 読み込む価格ファイル
-start_period = "2021/03/11 15:00"
-end_period = "2021/03/17 15:00"
+start_period = None
+end_period = None
 
 
 # 価格ファイルからローソク足データを読み込む関数
