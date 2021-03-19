@@ -20,9 +20,9 @@ judge_price={
   "SELL": "close_price"      # ブレイク判断　安値 (low_price)か終値（close_price）を使用
 }
 
-volatility_term = 30         # 平均ボラティリティの計算に使う期間
+volatility_term = 5         # 平均ボラティリティの計算に使う期間
 stop_range = 2               # 何レンジ幅にストップを入れるか
-trade_risk = 0.01            # 1トレードあたり口座の何％まで損失を許容するか
+trade_risk = 0.02            # 1トレードあたり口座の何％まで損失を許容するか
 levarage = 2                 # レバレッジ倍率の設定
 
 entry_times = 2              # 何回に分けて追加ポジションを取るか
