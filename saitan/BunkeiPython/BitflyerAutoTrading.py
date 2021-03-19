@@ -10,9 +10,9 @@ from PASSWORDS.password import *
 #-------------設定項目------------------------
 
 wait = 60                    # ループの待機時間（30秒推奨）
-buy_term = 30                # 最高値（上値）ブレイクアウト期間
-sell_term = 30               # 最安値（下値）ブレイクアウト期間
-chart_sec = 1800             # 使用する時間軸（秒換算）
+buy_term = 20                # 最高値（上値）ブレイクアウト期間
+sell_term = 20               # 最安値（下値）ブレイクアウト期間
+chart_sec = 7200             # 使用する時間軸（秒換算）
 chart_API = "cryptowatch"    # 価格の取得元を（cryptowatch/cryptocompare）から選択
 
 judge_price={
@@ -22,7 +22,7 @@ judge_price={
 
 volatility_term = 5          # 平均ボラティリティの計算に使う期間
 stop_range = 2               # 何レンジ幅にストップを入れるか
-trade_risk = 0.01            # 1トレードあたり口座の何％まで損失を許容するか
+trade_risk = 0.02            # 1トレードあたり口座の何％まで損失を許容するか
 levarage = 1                 # レバレッジ倍率の設定
 
 entry_times = 2              # 何回に分けて追加ポジションを取るか

@@ -8,16 +8,16 @@ import numpy as np
 
 #--------設定項目--------
 
-chart_sec = 60  # １時間足を使用
-buy_term = 30  # 買いエントリーのブレイク期間の設定
-sell_term = 30  # 売りエントリーのブレイク期間の設定
+chart_sec = 7200  # １時間足を使用
+buy_term = 20  # 買いエントリーのブレイク期間の設定
+sell_term = 20  # 売りエントリーのブレイク期間の設定
 
 judge_price = {
     "BUY": "high_price",  # ブレイク判断　高値（high_price)か終値（close_price）を使用
     "SELL": "low_price"  # ブレイク判断　安値 (low_price)か終値（close_price）を使用
 }
 
-volatility_term = 30       # 平均ボラティリティの計算に使う期間
+volatility_term = 5       # 平均ボラティリティの計算に使う期間
 stop_range = 2             # 何レンジ幅にストップを入れるか
 trade_risk = 0.02          # 1トレードあたり口座の何％まで損失を許容するか
 levarage = 2               # レバレッジ倍率の設定
