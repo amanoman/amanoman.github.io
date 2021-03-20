@@ -39,7 +39,7 @@ MA_term = 200                # トレンドフィルターに使う移動平均�
 bitflyer = ccxt.bitflyer()
 bitflyer.apiKey = bitFlyer_apiKey         # APIキーを設定
 bitflyer.secret = bitFlyer_secret         # APIシークレットを設定
-cryptowatch.apiKey =cryptowatch_apiKey
+cryptowatch_apiKey =cryptowatch_apiKey
 bitflyer.timeout = 30000     # 通信のタイムアウト時間の設定
 
 line_config = "ON"          # LINE通知をするかどうかの設定
@@ -469,7 +469,7 @@ def get_price(min, before=0, after=0):
 		if after != 0:
 			params["after"] = after
 
-		response = requests.get(f"https://api.cryptowat.ch/markets/bitflyer/btcfxjpy/ohlc?apikey={cryptowatch.apiKey}",params = { "periods" : 60 })
+		response = requests.get(f"https://api.cryptowat.ch/markets/bitflyer/btcfxjpy/ohlc?apikey={cryptowatch_apiKey}",params)
 		#response = requests.get("https://api.cryptowat.ch/markets/bitflyer/btcfxjpy/ohlc?apikey=***************", params = { "periods" : 60 })
 		data = response.json()
 		
