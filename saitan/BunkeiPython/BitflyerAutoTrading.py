@@ -518,7 +518,8 @@ def get_realtime_price(min):
 		params = {"periods" : min }
 		while True:
 			try:
-				response = requests.get("https://api.cryptowat.ch/markets/bitflyer/btcfxjpy/ohlc", params, timeout = 10)
+				#response = requests.get("https://api.cryptowat.ch/markets/bitflyer/btcfxjpy/ohlc", params, timeout = 10)
+				response = requests.get(f"https://api.cryptowat.ch/markets/bitflyer/btcfxjpy/ohlc?apikey={cryptowatch_apiKey}",params,timeout=10)
 				response.raise_for_status()
 				data = response.json()
 				return {
