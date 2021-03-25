@@ -12,4 +12,4 @@ for row in range(n):
     tmp = 0
     for col in range(m):
         tmp += A_lists[row][col]*b_lists[col]
-    print(tmp)
+    print("%D"%(tmp))
